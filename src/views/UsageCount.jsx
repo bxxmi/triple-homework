@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-const USERS = 700
-const REVIEW = 100
-const SCHEDULE = 470
+const USERS = 350
+const REVIEW = 21
+const SCHEDULE = 650
 
 const UsageCount = () => {
   return (
