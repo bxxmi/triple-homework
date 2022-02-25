@@ -7,10 +7,12 @@ export const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
     min-width: ${({ theme }) => theme.viewSize.width};
     height: ${({ theme }) => theme.viewSize.height};
+    font-family: sans-serif;
   }
 `
