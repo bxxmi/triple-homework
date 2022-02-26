@@ -23,6 +23,20 @@ const StoreAward = () => {
 
 const AwardContainer = styled.div`
   display: flex;
+  animation: fadeIn 700ms ease-in;
+  animation-delay: 200ms;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `
 
 const StoreContainer = styled.div`
