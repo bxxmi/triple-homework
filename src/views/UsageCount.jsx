@@ -1,20 +1,21 @@
 import styled from 'styled-components'
-
-const USERS = 350
-const REVIEW = 21
-const SCHEDULE = 650
+import useCount from '../hooks/useCount'
 
 const UsageCount = () => {
+  const users = useCount(0, 350)
+  const review = useCount(0, 21)
+  const schedule = useCount(0, 650)
+
   return (
     <CountContainer>
       <Text>
-        <span>{USERS}만 명</span>의 여행자
+        <span>{users}만 명</span>의 여행자
       </Text>
       <Text>
-        <span>{REVIEW}만 개</span>의 여행 리뷰
+        <span>{review}만 개</span>의 여행 리뷰
       </Text>
       <Text>
-        <span>{SCHEDULE}만 개</span>의 여행 일정
+        <span>{schedule}만 개</span>의 여행 일정
       </Text>
     </CountContainer>
   )
