@@ -21,7 +21,7 @@ const UsageCount = () => {
   )
 }
 
-const CountContainer = styled.div`
+export const CountContainer = styled.div`
   margin-bottom: 50px;
 `
 
