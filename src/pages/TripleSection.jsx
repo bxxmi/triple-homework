@@ -1,6 +1,6 @@
+import styled from 'styled-components'
 import TrophyContent from '../views/TrophyContent'
 import AwardInfoContent from '../views/AwardInfoContent'
-import styled from 'styled-components'
 import FadeInContainer from '../components/FadeInContainer'
 
 const TripleSection = () => {
