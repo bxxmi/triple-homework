@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+// import { easeOutCubic } from '../utils/easingAnimation'
 
 const useCount = (startNumber, endNumber) => {
   const [currentNumber, setCurrentNumber] = useState(startNumber)
