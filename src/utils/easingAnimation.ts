@@ -1,8 +1,8 @@
 export const easeOutCubic = (
-  currentTime,
-  startValue,
-  changeValue,
-  duration,
+  currentTime: number,
+  startValue: number,
+  changeValue: number,
+  duration: number,
 ) => {
   return (
     changeValue *

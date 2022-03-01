@@ -1,11 +1,8 @@
 import styled from 'styled-components'
+
 import { AwardContainer } from '../views/StoreAward'
 import { ContentContainer } from '../views/TrophyContent'
 import { CountContainer } from '../views/UsageCount'
-
-const FadeInContainer = ({ children }) => {
-  return <FadeContainer>{children}</FadeContainer>
-}
 
 const FadeContainer = styled.div`
   ${ContentContainer} {
@@ -34,5 +31,13 @@ const FadeContainer = styled.div`
     }
   }
 `
+
+interface Props {
+  children: JSX.Element
+}
+
+const FadeInContainer = ({ children }: Props) => {
+  return <FadeContainer>{children}</FadeContainer>
+}
 
 export default FadeInContainer

@@ -1,14 +1,5 @@
 import styled from 'styled-components'
 
-const TrophyContent = () => {
-  return (
-    <ContentContainer>
-      <Image src="./images/triple@2x.png" alt="trophy" />
-      <Text>2021년 12월 기준</Text>
-    </ContentContainer>
-  )
-}
-
 export const ContentContainer = styled.div`
   position: relative;
 `
@@ -26,5 +17,14 @@ const Text = styled.p`
   position: absolute;
   top: 280px;
 `
+
+const TrophyContent = () => {
+  return (
+    <ContentContainer>
+      <Image src="./images/triple@2x.png" alt="trophy" />
+      <Text>2021년 12월 기준</Text>
+    </ContentContainer>
+  )
+}
 
 export default TrophyContent

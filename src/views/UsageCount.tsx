@@ -1,5 +1,24 @@
 import styled from 'styled-components'
+
 import useCount from '../hooks/useCount'
+
+export const CountContainer = styled.div`
+  margin-bottom: 50px;
+`
+
+const Text = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.large};
+  color: ${({ theme }) => theme.colors.black};
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & > span {
+    font-weight: bold;
+  }
+`
 
 const UsageCount = () => {
   const users = useCount(0, 350)
@@ -20,23 +39,5 @@ const UsageCount = () => {
     </CountContainer>
   )
 }
-
-export const CountContainer = styled.div`
-  margin-bottom: 50px;
-`
-
-const Text = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.large};
-  color: ${({ theme }) => theme.colors.black};
-  margin-bottom: 20px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  & > span {
-    font-weight: bold;
-  }
-`
 
 export default UsageCount
