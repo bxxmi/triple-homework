@@ -1,12 +1,3 @@
-export const easeOutCubic = (
-  currentTime: number,
-  startValue: number,
-  changeValue: number,
-  duration: number,
-) => {
-  return (
-    changeValue *
-      ((currentTime / duration - 1) * currentTime * currentTime + 1) +
-    startValue
-  )
+export const easeQuadOut = (x: number) => {
+  return x === 1 ? 1 : 1 - Math.pow(2, -10 * x)
 }
