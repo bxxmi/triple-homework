@@ -1,25 +1,33 @@
 import { useCallback, useEffect, useState } from 'react'
-// import { easeOutCubic } from '../utils/easingAnimation'
 
-const useCount = (startNumber: number, endNumber: number) => {
-  const [currentNumber, setCurrentNumber] = useState<number>(startNumber)
-  const runTime = Math.round(2000 / endNumber)
+import { easeQuadOut } from '../utils/easingAnimation'
+
+const useCount = (startNumber: number, endNumber: number): number => {
+  const [count, setCount] = useState<number>(startNumber)
+  const runTime = 2000
+  const frameRate = 2000 / 60
+  const totalFrames = Math.round(runTime / frameRate)
+  let frame = 0
 
   const handleIncrease = useCallback(() => {
-    const newCurrentNumber =
-      currentNumber === endNumber ? endNumber : currentNumber + 1
-    setCurrentNumber(newCurrentNumber)
-  }, [currentNumber, endNumber])
+    frame++
+    const progress = easeQuadOut(frame / totalFrames)
+    const currentCount = Math.round(endNumber * progress)
+
+    if (endNumber >= currentCount) {
+      setCount(currentCount)
+    }
+  }, [endNumber, frame, totalFrames])
 
   useEffect(() => {
-    const countInterval = setInterval(handleIncrease, runTime)
+    const countInterval = setInterval(handleIncrease, frameRate)
 
     return () => {
       clearInterval(countInterval)
     }
-  }, [currentNumber, handleIncrease, runTime])
+  }, [frameRate, handleIncrease, endNumber])
 
-  return currentNumber
+  return count
 }
 
 export default useCount
